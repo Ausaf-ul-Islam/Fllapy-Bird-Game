@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+@font-face {
+    font-family: 'ausaf';
+    src: url('./font/FlappybirdyRegular-KaBW.ttf') format('truetype');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'ausaf';
+    font-size: 62.5%; 
+    font-weight: 600;
+}
+
+/* Center the game header and buttons */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(bg1.webp); 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    text-align: center;
+    font-size: 8rem; 
+    color: #000;
+    padding: 1.5rem; 
+    text-shadow: 0.2rem 0.2rem #fff; 
+}
+
+.loader {
+    margin: 10rem 0 0 0; 
+    width: 20rem;
+    height: 2.5rem; 
+    border-radius: 2rem; 
+    background:
+     repeating-linear-gradient(135deg,#ffcc00 0 1rem,#000000 0 2rem) 0/0%   no-repeat,
+     repeating-linear-gradient(135deg,#ddd    0 1rem,#eee    0 2rem) 0/100%;
+    animation: l3 15.1s infinite;
+}
+
+@keyframes l3 {
+    100% {background-size:100%}
+}
+
+.lod-text {
+    display: grid;
+    place-items: center;
+    font-size: 2rem; 
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    padding: 0.5rem; 
+    letter-spacing: 0.5rem; 
+}
+
+/* Game Interface Style */
+#gameInterface {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-image: url('bg1.webp'); /* Your background image */
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#gameHeader h1 {
+    font-size: 7.5rem; 
+    font-weight: 900;
+    color: #000;
+    text-shadow: 0.2rem 0.2rem #fff; 
+}
+
+#gameHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem; 
+    width: 100%;
+}
+
+/* Button Styles */
+#playButton,
+#about-btn,
+#moreBirdsButton {
+    padding: 1.5rem 3rem; 
+    font-size: 3rem; 
+    background-color: #ffcc00; 
+    border: 0.2rem solid #ffcc00; 
+    box-shadow: 0 0 1rem #ffcc00;
+    border-radius: 2rem; 
+    font-weight: 600;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    margin: 1rem;
+}
+
+#playButton:hover,
+#about-btn:hover,
+#moreBirdsButton:hover {
+    background-color: transparent;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+
+/* About Game Popup Styles */
+#aboutGamePopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    color: #000;
+    padding: 3rem 4rem  10rem; 
+    border-radius: 1rem;
+    text-align: center;
+    z-index: 1000;
+    height: 35vh;
+    width: 65%;
+    max-width: 45rem; 
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2); 
+}
+
+#aboutGamePopup h2 {
+    font-size: 5rem; 
+    color: #000;
+}
+
+#aboutGamePopup p {
+    font-size: 1.7rem; 
+    color: #000;
+    margin: 1rem 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+#closeAboutPopup {
+    margin-top: 2rem; 
+    padding: 1rem 2rem; 
+    font-size: 2.5rem; 
+    background-color: #ffcc00; 
+    border: 0.2rem solid #ffcc00; 
+    box-shadow: 0 0 1rem #ffcc00;
+    border-radius: 2rem; 
+    font-weight: 600;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+#closeAboutPopup:hover {
+    background-color: transparent;
+}
+
+/* Social Media Icons */
+#social-media-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; 
+    margin-top: 4rem;
+}
+
+#social-media-icons a {
+    color: #000000;
+    border: 0.2rem solid #000000; 
+    border-radius: 51%;
+    font-size: 4rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+#social-media-icons a:hover {
+    color: #ffcc00;
+    border: 0.2rem solid #ffcc00; 
+    transform: scale(1.1);
+}
+legend{
+    font-size: 2rem;
+    font-family: poppins;
+    color: #ffcc00;
+}
+
+/* Bird Selection Popup Styles */
+#birdSelectionPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    color: #000; 
+    padding: 3rem 4rem 10rem; 
+    border-radius: 1rem;
+    text-align: center;
+    z-index: 1000;
+    height: 35vh;
+    width: 65%;
+    max-width: 45rem; 
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2); 
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#birdImages {
+    display: flex;
+    gap: 1rem;
+    padding: 3rem 1rem; 
+    overflow-x: auto;
+}
+
+.bird-option {
+    width: 9rem; 
+    height: 9rem; 
+    cursor: pointer;
+    border: 0.2rem solid #ddd; 
+    border-radius: 0.5rem; 
+    transition: transform 0.2s;
+}
+
+.bird-option:hover {
+    transform: scale(1.1);
+    border-color: #ffcc00;
+}
+
+.bird-popup-text {
+    color: #000000;
+    font-size: 5rem; 
+    margin-top: 1rem;
+}
+
+#closePopupButton {
+    padding: 1rem 2rem; 
+    font-size: 2.5rem; 
+    background-color: #ffcc00; 
+    border: 0.2rem solid #ffcc00; 
+    box-shadow: 0 0 1rem #ffcc00;
+    border-radius: 2rem; 
+    font-weight: 600;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+#closePopupButton:hover {
+    background-color: transparent;
+}
+
+#birdMessage {
+    color: red;
+    font-family: 'Poppins';
+    font-size: 1.5rem;
+    margin: 0rem;
+    display: none;
+}
+
+#purchaseMessage {
+    color: green;
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    display: none;
+}
+
+/* Game Canvas */
+#gameCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Game Over Popup */
+#gameOverPopup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    height: 35vh;
+    width: 65%;
+    padding:4rem 0 0;
+    border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 .4rem .8rem rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+#gameOverPopup h2 {
+    font-size: 5.5rem;
+    color: #000;
+    margin-bottom: 1.5rem;
+}
+
+#finalScore {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+#restartButton {
+    padding: 1rem 1rem;
+    font-size: 3rem;
+    background-color: #ffcc00; 
+    border: .2rem solid #ffcc00;
+    box-shadow: 0 0 1rem #ffcc00;
+    border-radius: 2rem;
+    font-weight: 600;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+#restartButton:hover {
+    background-color: transparent;
+}
+@media (max-width:370px){
+    html{
+        font-size: 55%;
+    }
+}

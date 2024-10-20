@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird Game</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Flappy Bird Game</h1>
+    <div class="loader" id="game-loader"></div>
+    <div class="lod-text">Loding...</div>
+    <div id="game-content" style="display: none;">
+    <!-- Game Interface -->
+    <div id="gameInterface">
+        
+        <header id="gameHeader">
+            <h1>Flappy Bird Game</h1>
+            <button id="playButton">Play</button>
+            <button id="moreBirdsButton">More Birds</button>
+    <!-- "About Game" Button -->
+            <button id="about-btn">About Game</button>
+    <!-- About Game Popup -->
+    <div id="aboutGamePopup" class="hidden">
+        <div class="popup-content">
+            <h2>About the Game</h2>
+            <p>This Game Is Developed By <legend>Ausaf UL Islam</legend></p>
+            <div id="social-media-icons">
+                <a href="https://www.facebook.com/profile.php?id=100075926784195" target="_blank"><i class='bx bxl-facebook'></i></a>
+                <a href="https://x.com/ausaf_ul_islam" target="_blank"><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.instagram.com/ausafkhan987/" target="_blank"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.linkedin.com/in/ausaf-ul-islam-25387a329" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://www.youtube.com/@asf_writes?sub_confirmation=1" target="_blank"><i class='bx bxl-youtube'></i></a>
+            </div>            
+            <button id="closeAboutPopup">Close</button>
+        </div>
+    </div>
+        </header>
+    </div>
+    <!-- Game Canvas -->
+    <canvas id="gameCanvas" class="hidden"></canvas>
+<!-- Bird Selection Popup -->
+<div id="birdSelectionPopup" class="hidden">
+    <div class="popup-content">
+        <p class="bird-popup-text">Select Your Bird</p>
+        <p id="birdMessage" class="hidden"></p>
+        <p id="purchaseMessage" class="hidden"></p>
+        <div id="birdImages">
+            <img src="default.png" alt="Default" class="bird-option" data-bird-src="default.png" data-cost="0">
+            <img src="bird1.jpg" alt="Bird 1" class="bird-option" data-bird-src="bird1.jpg" data-cost="100">
+            <img src="bird2.png" alt="Bird 2" class="bird-option" data-bird-src="bird2.png" data-cost="200">
+            <img src="bird3.png" alt="Bird 3" class="bird-option" data-bird-src="bird3.png" data-cost="300">
+            <img src="bird4.png" alt="Bird 4" class="bird-option" data-bird-src="bird4.png" data-cost="400">
+            <img src="bird5.png" alt="Bird 5" class="bird-option" data-bird-src="bird5.png" data-cost="500">
+            <img src="bird6.jpeg" alt="Bird 6" class="bird-option" data-bird-src="bird6.jpeg" data-cost="600">
+            <img src="bird7.png" alt="Bird 7" class="bird-option" data-bird-src="bird7.png" data-cost="700">
+            <img src="bird8.jpeg" alt="Bird 8" class="bird-option" data-bird-src="bird8.jpeg" data-cost="800">
+            <img src="bird9.jpeg" alt="Bird 9" class="bird-option" data-bird-src="bird9.jpeg" data-cost="900">
+        </div>
+    </div>
+    <span id="closePopupButton">Close</span>
+</div>
+
+    <!-- Game Over Popup -->
+    <div id="gameOverPopup" class="hidden">
+        <h2>Game Over!</h2>
+        <p id="finalScore">Coin : 0</p>
+        <button id="restartButton">New Game</button>
+    </div>
+    
+    <audio id="backgroundMusic" src="music.mp3" loop></audio>
+    <audio id="flapSound" src="flap.mp3"></audio>
+    <audio id="coinSound" src="coin.mp3"></audio>
+    <audio id="purchaseSound" src="purchase.mp3"></audio>
+    </div>
+    <!-- Include JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+    
