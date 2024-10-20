@@ -334,7 +334,7 @@ function hideLoader() {
     gameContent.style.display = 'block';
     
 }
-setTimeout(hideLoader, 1000);
+setTimeout(hideLoader, 10000);
 
 // Add event listeners for the "About Game" button and popup close button
 document.getElementById('about-btn').addEventListener('click', function() {
